@@ -1,7 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>`r`n    <key>CFBundleExecutable</key>`r`n    <string>J7Bridge</string>
+<dict>
+    <key>CFBundleExecutable</key>
+    <string>J7Bridge</string>
     <key>CFBundleDisplayName</key>
     <string>CALLSHARE</string>
     <key>CFBundleIdentifier</key>
@@ -13,11 +15,11 @@
     <key>LSRequiresIPhoneOS</key>
     <true/>
     <key>NSBluetoothAlwaysUsageDescription</key>
-    <string>J7Bridge uses Bluetooth Low Energy to communicate with the IKOS K7 gateway.</string>
+    <string>CALLSHARE uses Bluetooth Low Energy to communicate with the IKOS K7 gateway.</string>
     <key>NSMicrophoneUsageDescription</key>
-    <string>J7Bridge uses the microphone only during an active GSM call.</string>
+    <string>CALLSHARE uses the microphone only during an active GSM call.</string>
     <key>NSContactsUsageDescription</key>
-    <string>J7Bridge uses Contacts to display caller names and provide a dialable contact list.</string>
+    <string>CALLSHARE uses Contacts to display caller names and provide a dialable contact list.</string>
     <key>UIBackgroundModes</key>
     <array>
         <string>bluetooth-central</string>
@@ -27,5 +29,3 @@
     <dict/>
 </dict>
 </plist>
-
-
