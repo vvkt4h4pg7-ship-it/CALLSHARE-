@@ -47,7 +47,10 @@ final class CallKitManager: NSObject {
 
         provider.reportNewIncomingCall(with: uuid, update: update) { [weak self] error in
             if let error {
-                self?.onLog?("[CALLKIT] incoming failed: \(error.localizedDescription)")
+                let nsError = error as NSError
+                self?.onLog?("[CALLKIT] ERROR domain=\(nsError.domain) code=\(nsError.code)")
+                self?.onLog?("[CALLKIT] ERROR description=\(nsError.localizedDescription)")
+                self?.onLog?("[CALLKIT] ERROR userInfo=\(nsError.userInfo)")
                 self?.currentUUID = nil
             } else {
                 self?.onLog?("[CALLKIT] INCOMING UI REPORTED UUID=\(uuid.uuidString)")
