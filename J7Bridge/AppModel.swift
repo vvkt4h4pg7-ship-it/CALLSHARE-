@@ -73,6 +73,10 @@ final class AppModel: ObservableObject {
         ble.onControlPayload = { [weak self] payload in self?.handleControl(payload) }
         ble.onAudioPayload = { [weak self] payload in self?.voice.receiveAMR(payload) }
 
+        callKit.onLog = { [weak self] line in
+            self?.log(line)
+        }
+
         callKit.onStart = { [weak self] number in self?.beginOutgoing(number) }
         callKit.onAnswer = { [weak self] in
             guard let self else { return }
