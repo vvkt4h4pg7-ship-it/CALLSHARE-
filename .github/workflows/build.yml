@@ -19,7 +19,7 @@ jobs:
             -target J7Bridge \
             -sdk iphoneos \
             -configuration Release \
-            -derivedDataPath build \
+            CONFIGURATION_BUILD_DIR=$PWD/build/Release-iphoneos \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY=""
@@ -28,7 +28,7 @@ jobs:
         run: |
           rm -rf ipa_staging
           mkdir -p ipa_staging/Payload
-          cp -R build/Build/Products/Release-iphoneos/J7Bridge.app ipa_staging/Payload/
+          cp -R build/Release-iphoneos/J7Bridge.app ipa_staging/Payload/
           cd ipa_staging
           zip -qry ../CALLSHARE-Final-unsigned.ipa Payload
 
@@ -37,3 +37,5 @@ jobs:
         with:
           name: CALLSHARE-Final-unsigned
           path: CALLSHARE-Final-unsigned.ipa
+
+
