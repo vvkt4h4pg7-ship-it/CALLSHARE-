@@ -1,4 +1,4 @@
-name: CALLSHARE Final iOS Build
+﻿name: CALLSHARE Final iOS Build
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-15-intel
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,3 +29,4 @@ jobs:
         with:
           name: CALLSHARE-Final-unsigned
           path: CALLSHARE-Final-unsigned.ipa
+
