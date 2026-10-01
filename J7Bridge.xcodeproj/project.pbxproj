@@ -1,4 +1,4 @@
-// !$*UTF8*$!
+﻿// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	objectVersion = 56;
@@ -59,8 +59,8 @@
 /* End PBXSourcesBuildPhase section */
 
 /* XCBuildConfiguration section */
-		AAA000000000000000007001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = com.ugur.callshare; PRODUCT_NAME = J7Bridge; WRAPPER_NAME = J7Bridge.app; EXECUTABLE_NAME = J7Bridge; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = 16.0; INFOPLIST_FILE = J7Bridge/Info.plist; TARGETED_DEVICE_FAMILY = "1"; GENERATE_INFOPLIST_FILE = NO; SDKROOT = iphoneos; SWIFT_EMIT_LOC_STRINGS = YES; }; name = Debug; };
-		AAA000000000000000007002 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = com.ugur.callshare; PRODUCT_NAME = J7Bridge; WRAPPER_NAME = J7Bridge.app; EXECUTABLE_NAME = J7Bridge; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = 16.0; INFOPLIST_FILE = J7Bridge/Info.plist; TARGETED_DEVICE_FAMILY = "1"; GENERATE_INFOPLIST_FILE = NO; SDKROOT = iphoneos; SWIFT_EMIT_LOC_STRINGS = YES; }; name = Release; };
+		AAA000000000000000007001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = com.ugur.callshare; PRODUCT_NAME = J7Bridge; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = 16.0; INFOPLIST_FILE = J7Bridge/Info.plist; TARGETED_DEVICE_FAMILY = "1"; GENERATE_INFOPLIST_FILE = NO; SDKROOT = iphoneos; SWIFT_EMIT_LOC_STRINGS = YES; }; name = Debug; };
+		AAA000000000000000007002 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = com.ugur.callshare; PRODUCT_NAME = J7Bridge; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = 16.0; INFOPLIST_FILE = J7Bridge/Info.plist; TARGETED_DEVICE_FAMILY = "1"; GENERATE_INFOPLIST_FILE = NO; SDKROOT = iphoneos; SWIFT_EMIT_LOC_STRINGS = YES; }; name = Release; };
 /* End XCBuildConfiguration section */
 
 /* XCConfigurationList section */
@@ -70,4 +70,5 @@
 	};
 	rootObject = AAA000000000000000005001;
 }
+
 
