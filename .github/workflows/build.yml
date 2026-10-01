@@ -19,7 +19,7 @@ jobs:
             -target J7Bridge \
             -sdk iphoneos \
             -configuration Release \
-            CONFIGURATION_BUILD_DIR=$PWD/build/Release-iphoneos \
+            CONFIGURATION_BUILD_DIR=$PWD/build/Release-iphoneos `r`n            PRODUCT_NAME=J7Bridge `r`n            WRAPPER_NAME=J7Bridge.app `r`n            EXECUTABLE_NAME=J7Bridge \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY=""
@@ -37,5 +37,6 @@ jobs:
         with:
           name: CALLSHARE-Final-unsigned
           path: CALLSHARE-Final-unsigned.ipa
+
 
 
