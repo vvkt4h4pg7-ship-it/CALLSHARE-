@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
+<dict>`r`n    <key>CFBundleExecutable</key>`r`n    <string>J7Bridge</string>
     <key>CFBundleDisplayName</key>
     <string>CALLSHARE</string>
     <key>CFBundleIdentifier</key>
@@ -27,4 +27,5 @@
     <dict/>
 </dict>
 </plist>
+
 
