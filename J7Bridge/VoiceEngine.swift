@@ -316,7 +316,10 @@ final class VoiceEngine: NSObject {
 
     private func schedulePlayback(_ pcm: [Int16]) {
         guard pcm.count == 160 else { return }
-        guard audioEngine.isRunning else { return }
+        if !audioEngine.isRunning {
+            reportStatus("[AUDIO] PLAYBACK DROP engineRunning=NO")
+            return
+        }
 
         guard let buffer = AVAudioPCMBuffer(
             pcmFormat: pcm8kFormat,
