@@ -192,6 +192,7 @@ final class VoiceEngine: NSObject {
     /// uses the same mode instead of assuming MR122 forever.
     func receiveAMR(_ packet: Data) {
         guard !packet.isEmpty else { return }
+        if rxFrames == 0 && invalidRx == 0 && droppedRx == 0 { reportStatus("[AMR] RECEIVE ENTRY len=\(packet.count)") }
 
         guard isRunning else {
             droppedRx += 1
