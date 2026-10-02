@@ -184,6 +184,8 @@ extension BLEManager: CBPeripheralDelegate {
             return
         }
         if parsed.channel == 3 {
+            NSLog("[J7BRIDGE_DIAG] BLE AUDIO RX len=\(parsed.payload.count)")
+            NSLog("[J7BRIDGE_DIAG] BLE TO VoiceEngine.receiveAMR")
             onAudioPayload?(parsed.payload)
         } else {
             onControlPayload?(parsed.payload)
