@@ -1,4 +1,4 @@
-﻿import Foundation
+import Foundation
 import AVFoundation
 
 // OpenCORE AMR-NB C ABI. The GitHub Actions build links the resulting
@@ -231,7 +231,7 @@ final class VoiceEngine: NSObject {
             reportStatus(
                 "[AMR] PCM CHECK rx=\(rxFrames + 1) min=\(minSample) max=\(maxSample) nonZero=\(nonZero)/160"
             )
-                NSLog("[J7BRIDGE_DIAG] PCM min=\(minSample) max=\(maxSample) nonZero=\(nonZero))
+                NSLog("[J7BRIDGE_DIAG] PCM min=\(minSample) max=\(maxSample) nonZero=\(nonZero)")
         }
 
         rxFrames += 1
@@ -362,7 +362,7 @@ final class VoiceEngine: NSObject {
         }
 
         playerNode.scheduleBuffer(buffer, completionHandler: nil)
-        NSLog("[J7BRIDGE_DIAG] playback scheduled)
+        NSLog("[J7BRIDGE_DIAG] playback scheduled")
 
         if !playerNode.isPlaying {
             playerNode.play()
