@@ -63,8 +63,9 @@ final class BLEManager: NSObject, ObservableObject {
     func requestCurrentCall() { sendControl(Data([K7Protocol.cmdGetCurrentCall])) }
 
     func sendAudio(_ amr: Data) {
-        guard let p = peripheral, let tx = txChar else { return }
+        guard let p = peripheral, let tx = txChar else { log("[BLE] AUDIO TX unavailable"); return }
         let frame = K7Protocol.wrapAudio(amr)
+        log("[BLE] AUDIO TX \(K7Protocol.hex(frame))")
         p.writeValue(frame, for: tx, type: .withoutResponse)
     }
 
