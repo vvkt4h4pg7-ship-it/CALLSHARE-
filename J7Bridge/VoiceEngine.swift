@@ -1,4 +1,4 @@
-import Foundation
+﻿import Foundation
 import AVFoundation
 
 // OpenCORE AMR-NB C ABI. The GitHub Actions build links the resulting
@@ -79,6 +79,7 @@ final class VoiceEngine: NSObject {
     /// PCM boundary used by AMR-NB.
     func start() {
         guard !isRunning else { return }
+        NSLog("[J7BRIDGE_DIAG] VoiceEngine.start ENTER")
 
         do {
             applySessionCategory()
@@ -153,6 +154,7 @@ final class VoiceEngine: NSObject {
             audioEngine.prepare()
             try audioEngine.start()
             playerNode.play()
+            NSLog("[J7BRIDGE_DIAG] VoiceEngine OPEN OK")
 
             reportStatus(
                 String(
@@ -202,6 +204,10 @@ final class VoiceEngine: NSObject {
             return
         }
 
+        if rxFrames == 0 || rxFrames % 25 == 0 {
+            NSLog("[J7BRIDGE_DIAG] receiveAMR len=\(packet.count)")
+        }
+
         guard let frameInfo = codec.validateAndLearnMode(packet) else {
             invalidRx += 1
             if invalidRx == 1 || invalidRx % 25 == 0 {
@@ -225,6 +231,7 @@ final class VoiceEngine: NSObject {
             reportStatus(
                 "[AMR] PCM CHECK rx=\(rxFrames + 1) min=\(minSample) max=\(maxSample) nonZero=\(nonZero)/160"
             )
+                NSLog("[J7BRIDGE_DIAG] PCM min=\(minSample) max=\(maxSample) nonZero=\(nonZero))
         }
 
         rxFrames += 1
@@ -355,6 +362,7 @@ final class VoiceEngine: NSObject {
         }
 
         playerNode.scheduleBuffer(buffer, completionHandler: nil)
+        NSLog("[J7BRIDGE_DIAG] playback scheduled)
 
         if !playerNode.isPlaying {
             playerNode.play()
