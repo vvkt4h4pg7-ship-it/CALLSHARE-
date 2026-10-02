@@ -261,7 +261,7 @@ final class AppModel: ObservableObject {
     }
 
     private func maybeStartVoice() {
-        guard callStatus == "ACTIVE", callAudioActive, remoteVoiceOpen else { return }
+        guard callStatus == "ACTIVE", callAudioActive else { return }
         voice.start()
     }
 
