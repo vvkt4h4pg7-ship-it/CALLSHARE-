@@ -16,6 +16,7 @@ final class BLEManager: NSObject, ObservableObject {
 
     var autoReconnect = true
     private var reconnectWorkItem: DispatchWorkItem?
+    private var audioRxCount = 0
 
     override init() {
         super.init()
@@ -184,8 +185,11 @@ extension BLEManager: CBPeripheralDelegate {
             return
         }
         if parsed.channel == 3 {
-            NSLog("[J7BRIDGE_DIAG] BLE AUDIO RX len=\(parsed.payload.count)")
-            NSLog("[J7BRIDGE_DIAG] BLE TO VoiceEngine.receiveAMR")
+            audioRxCount += 1
+            if audioRxCount == 1 || audioRxCount % 25 == 0 {
+                log("[BLE] AUDIO RX #\(audioRxCount) len=\(parsed.payload.count)")
+                log("[BLE] AUDIO -> VoiceEngine.receiveAMR")
+            }
             onAudioPayload?(parsed.payload)
         } else {
             onControlPayload?(parsed.payload)
