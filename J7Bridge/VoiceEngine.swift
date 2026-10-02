@@ -534,7 +534,6 @@ final class AMRCodecAdapter {
         }
         lock.unlock()
 
-        if ok {
         return ok ? pcm : nil
     }
 }
