@@ -522,6 +522,20 @@ final class AMRCodecAdapter {
         }
         lock.unlock()
 
+        if ok {
+            let minSample = pcm.min() ?? 0
+            let maxSample = pcm.max() ?? 0
+            let nonZero = pcm.reduce(into: 0) { count, sample in
+                if sample != 0 { count += 1 }
+            }
+
+            if rxFrames == 0 || rxFrames % 25 == 0 {
+                reportStatus(
+                    "[AMR] PCM CHECK rx=\(rxFrames + 1) min=\(minSample) max=\(maxSample) nonZero=\(nonZero)/160"
+                )
+            }
+        }
+
         return ok ? pcm : nil
     }
 }
